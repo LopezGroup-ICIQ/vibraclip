@@ -23,13 +23,7 @@ conda env create -f env_cpu.yml
 conda activate vibraclip_gpu
 ```
 
-We recommend setting the following environment variable in the `.bashrc` file:
-
-```bash
-export PYTHONPATH=$PYTHONPATH:/home/{YOUR_PATH}
-```
-
-Substitute `{YOUR_PATH}` to the path where the `VibraCLIP` repository is cloned.
+`WARNING:` We recommend to use `lightning` instead of the deprecated `pytorch_lightning`, by implementing the the changes suggested in the following pull request to `pytorch_geometric` [link](https://github.com/pyg-team/pytorch_geometric/pull/10147).
 
 ## 🚀 Quickstart
 
