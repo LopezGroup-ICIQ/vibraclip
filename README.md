@@ -21,9 +21,11 @@ named `vibraclip_cpu/gpu` and install the dependencies.
 ```bash
 conda env create -f env_cpu.yml
 conda activate vibraclip_gpu
+pre-commit install
 ```
 
-`WARNING:` We recommend to use `lightning` instead of the deprecated `pytorch_lightning`, by implementing the the changes suggested in the following pull request to `pytorch_geometric` [link](https://github.com/pyg-team/pytorch_geometric/pull/10147).
+> #### WARNING:
+> We recommend to use `lightning` instead of the deprecated `pytorch_lightning`, by implementing the the changes suggested in the following pull request to `pytorch_geometric` [link](https://github.com/pyg-team/pytorch_geometric/pull/10147).
 
 ## 🚀 Quickstart
 
