@@ -1,7 +1,7 @@
 
 The MIT License
 
-Copyright (c) 2024 - Institute of Chemical Research of Catalonia (ICIQ)
+Copyright (c) 2025 - Institute of Chemical Research of Catalonia (ICIQ)
 
 Javier Heras-Domingo
 
