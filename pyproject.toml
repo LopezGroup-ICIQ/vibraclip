@@ -1,3 +1,8 @@
+# Copyright (c) 2025 - Institute of Chemical Research of Catalonia (ICIQ)
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
@@ -9,7 +14,7 @@ description = "Smart Multi-Modal Vibrational Characterization of Organic Molecul
 readme = "README.md"
 license = { file = "LICENSE.md" }
 authors = [
-    { name = "Pau Rocabert-Oriols", email = "procabert@iciq.es"}
+    { name = "Pau Rocabert-Oriols", email = "procabert@iciq.es"},
     { name = "Javier Heras-Domingo", email = "jheras@iciq.es"}
 ]
 keywords = ["Vibrational spectroscopy", "Deep Learning", "Smart Characterization"]
@@ -24,6 +29,3 @@ classifiers = [
 
 [tool.setuptools]
 packages = ["vibraclip"]
-
-[project.scripts]
-vibraclip-main-ir = ""
