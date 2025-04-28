@@ -100,7 +100,7 @@ make clean-all   # To clean __pycache__ folders and unnecessary things
 The authors thank the Institute of Chemical Research of Catalonia (ICIQ) Summer Fellow Program for its support. We also acknowledge the Department of Research and Universities of the Generalitat de Catalunya for funding through grant (reference: SGR-01155). Additionally, we are grateful to Dr. Georgiana Stoica and Mariona Urtasun from the ICIQ Research Support Area (Spectroscopy and Material Characterization Unit) for their valuable assistance. Computational resources were provided by the Barcelona Supercomputing Center (BSC), which we gratefully acknowledge.
 
 ## ⚖️  License
-`VibraCLIP` is released under the [MIT]() license.
+`VibraCLIP` is released under the [MIT](https://github.com/jherasdo/vibraclip/blob/main/LICENSE.md) license.
 
 ## 📄 Citing `VibraCLIP`
 
