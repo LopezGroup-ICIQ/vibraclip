@@ -1,0 +1,34 @@
+name: vibraclip_cpu
+channels:
+    - pytorch
+    - pyg
+    - conda-forge
+    - defaults
+dependencies:
+    - python=3.10.*
+    - pip
+    - pre-commit
+    - numpy
+    - pandas
+    - matplotlib
+    - pymatgen
+    - ase
+    - rdkit
+    - pytorch=2.1.0
+    - torchvision=0.16.0
+    - cpuonly
+    - pyg=2.4.0
+    - pip:
+        - jcamp
+        - hydra-core
+        - wandb
+        - lmdb
+        - rich
+        - scikit-learn
+        - lightning
+        - optuna
+        - seaborn
+        - torch_scatter -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+        - torch_sparse -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+        - torch_cluster -f https://data.pyg.org/whl/torch-2.1.0+cpu.html
+        - torch_spline_conv -f https://data.pyg.org/whl/torch-2.1.0+cpu.html

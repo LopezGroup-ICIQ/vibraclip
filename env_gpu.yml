@@ -1,0 +1,36 @@
+name: vibraclip_gpu
+channels:
+  - pytorch
+  - pyg
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.*
+  - pip
+  - pre-commit
+  - numpy=1.26.4
+  - pandas
+  - matplotlib
+  - pymatgen
+  - ase
+  - rdkit
+  - pytorch=2.1.0
+  - torchvision=0.16.0
+  - pytorch-cuda=12.1
+  - pyg=2.4.0
+  - pip:
+      - jcamp
+      - hydra-core
+      - wandb
+      - lmdb
+      - rich
+      - scikit-learn
+      - lightning==2.4.0
+      - optuna
+      - seaborn
+      - --find-links https://data.pyg.org/whl/torch-2.1.0+cu121.html
+      - torch_scatter==2.1.2+pt21cu121
+      - torch_sparse==0.6.18+pt21cu121
+      - torch_cluster==1.6.3+pt21cu121
+      - torch_spline_conv==1.2.2+pt21cu121
