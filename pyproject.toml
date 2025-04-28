@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibraclip"
+version = "0.0.1"
+description = "Smart Multi-Modal Vibrational Characterization of Organic Molecules"
+readme = "README.md"
+license = { file = "LICENSE.md" }
+authors = [
+    { name = "Pau Rocabert-Oriols", email = "procabert@iciq.es"}
+    { name = "Javier Heras-Domingo", email = "jheras@iciq.es"}
+]
+keywords = ["Vibrational spectroscopy", "Deep Learning", "Smart Characterization"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jherasdo/vibraclip"
+
+[tool.setuptools]
+packages = ["vibraclip"]
+
+[project.scripts]
+vibraclip-main-ir = ""
