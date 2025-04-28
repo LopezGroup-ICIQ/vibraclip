@@ -25,7 +25,7 @@ pre-commit install
 ```
 
 > #### WARNING:
-> We recommend to use `lightning` instead of the deprecated `pytorch_lightning`, by implementing the the changes suggested in the following pull request to `pytorch_geometric` [link](https://github.com/pyg-team/pytorch_geometric/pull/10147).
+> We recommend to use `lightning` instead of the deprecated `pytorch_lightning`, by implementing the changes suggested in the following pull request to `pytorch_geometric` [link](https://github.com/pyg-team/pytorch_geometric/pull/10147).
 
 ## 🚀 Quickstart
 
