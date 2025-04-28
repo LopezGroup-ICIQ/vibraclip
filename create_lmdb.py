@@ -8,8 +8,8 @@ LICENSE file in the root directory of this source tree.
 from vibraclip.preprocessing.graph import QM9Spectra
 
 # Paths
-data_path = "../vibraclip/data/qm9s_ir_raman.pkl"
-db_path = "../vibraclip/data/qm9s_ir_raman.lmdb"
+data_path = "./data/qm9s_ir_raman.pkl"
+db_path = "./data/qm9s_ir_raman.lmdb"
 
 # LMDB Generator
 extractor = QM9Spectra(
