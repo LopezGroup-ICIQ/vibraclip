@@ -98,6 +98,9 @@ make clean-data  # To remove the processed folder from PyG
 make clean-all   # To clean __pycache__ folders and unnecessary things
 ```
 
+## 💾 Supplementary Data
+The supplemetary data has been published in a [Zenodo]() repository, providing the datasets in both pickle and LMDB formats, the pre-trained `VibraCLIP` checkpoints for all experiments, and the output callback pickle files to ensure full repoducibility of the reported results.
+
 ## ❤️  Acknowledgements
 The authors thank the Institute of Chemical Research of Catalonia (ICIQ) Summer Fellow Program for its support. We also acknowledge the Department of Research and Universities of the Generalitat de Catalunya for funding through grant (reference: SGR-01155). Additionally, we are grateful to Dr. Georgiana Stoica and Mariona Urtasun from the ICIQ Research Support Area (Spectroscopy and Material Characterization Unit) for their valuable assistance. Computational resources were provided by the Barcelona Supercomputing Center (BSC), which we gratefully acknowledge.
 
