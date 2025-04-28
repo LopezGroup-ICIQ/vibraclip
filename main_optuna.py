@@ -1,5 +1,5 @@
 """
-Copyright (c) 2024 - Institute of Chemical Research of Catalonia (ICIQ)
+Copyright (c) 2025 - Institute of Chemical Research of Catalonia (ICIQ)
 
 This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
