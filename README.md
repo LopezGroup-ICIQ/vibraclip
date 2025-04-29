@@ -12,14 +12,14 @@
 
 ## 📌 Introduction
 
-VibraCLIP is a multi-modal framework, inspired by the CLIP model [1], that integrates molecular graph representations with infrared (IR) and Raman spectra, from the QM9S Dataset [2], leveraging advanced machine learning to capture complex relationships between molecular structures and vibrational spectroscopy. By aligning these diverse data modalities in a shared representation space, VibraCLIP enables precise molecular characterization, bridging the gap between spectral data and molecular interpretation.
+VibraCLIP is a multi-modal framework, inspired by the CLIP model [1], that integrates molecular graph representations with infrared (IR) and Raman spectra, from the QM9S Dataset [2] and experimental data, leveraging advanced machine learning to capture complex relationships between molecular structures and vibrational spectroscopy. By aligning these diverse data modalities in a shared representation space, VibraCLIP enables precise molecular identification, bridging the gap between spectral data and molecular interpretation.
 
 ## ⚡ Installation
 After installing [conda](http://conda.pydata.org/), run the following commands to create a new [environment](https://conda.io/docs/user-guide/tasks/manage-environments.html)
 named `vibraclip_cpu/gpu` and install the dependencies.
 
 ```bash
-conda env create -f env_cpu.yml
+conda env create -f env_gpu.yml
 conda activate vibraclip_gpu
 pre-commit install
 ```
@@ -30,12 +30,12 @@ pre-commit install
 ## 🚀 Quickstart
 
 ### Generate LMDB file
-To generate the `LMDB` file, first you need to place a pickle file in the `data` folder with all the raw information inside. We provide both the pickle file and the generation script in the `scripts` folder, so the user can either use our pickle file to re-generate the lmdb file or create a new pickle file from the original QM9S dataset[2].
+To generate the `LMDB` file, first you need to place a pickle file in the `data` folder with all the raw information inside. We provide both the pickle file (see supplementary data) and the generation script in the `scripts` folder, so the user can either use our pickle file to re-generate the lmdb file or create a new pickle file from the original QM9S dataset[2].
 
 Then, after getting the pickle file, the user needs to generate the `LMDB` file using the `create_lmdb.py` script as follows:
 
 ```python
-from preprocessing.graph import QM9Spectra
+from vibraclip.preprocessing.graph import QM9Spectra
 
 # Paths
 data_path = "./data/qm9s_ir_raman.pkl"
@@ -53,10 +53,10 @@ extractor.get_lmdb()
 # extractor.get_pickle()
 ```
 
-This method automatically generates the molecular graph representations and stores the processed IR and Raman spectra inside the [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) `Data` object with other metadata.
+This method automatically generates the molecular graph representations and stores the processed IR and Raman spectra inside the [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) `Data` object with other metadata. Finally, the LMDB file is exported in the same `data` folder.
 
 ### Training VibraCLIP
-To train VibraCLIP, we use [hydra](https://hydra.cc/) to configure the model's hyperparameters and training settings through a `config.yaml` file stored in the `configs` folder. We provide the general configuration file `config.yaml` for pre-training the model and the `config_ft.yaml` for the fine-tuning stage with the QM9S external dataset from [PubChem](https://pubchem.ncbi.nlm.nih.gov/). We refer the user to check all the hyperparameters used in our work within the yaml files.
+To train VibraCLIP, we use [hydra](https://hydra.cc/) to configure the model's hyperparameters and training settings through the `config.yaml` file stored in the `configs` folder. We provide the general configuration file `config.yaml` for pre-training the model and the `config_ft.yaml` for the fine-tuning (realignment) stage with the QM9S external dataset from [PubChem](https://pubchem.ncbi.nlm.nih.gov/) and experimental data. We refer the user to check all the hyperparameters used in our work within the yaml files.
 
 VibraCLIP considers different scenarios for training, depending on the modalities:
 
@@ -74,18 +74,23 @@ python main_ir_raman.py --config-name config.yaml
 
 Note that both models can be trained using the same `config.yaml` file.
 
-The model's checkpoint files are stored automatically in the `checkpoints` folder and the `RetrievalAccuracy` callbacks will save a pickle file in the `outputs` folder for further analysis of the model's performance in the test dataset.
+The model's checkpoint files are stored automatically in the `checkpoints` folder and the `RetrievalAccuracy` callbacks will save a pickle file in the `outputs` folder for further analysis of the model's performance in the test dataset. These outputs can be visualized with the provided `jupyter notebooks` (see Evaluate vibraclip performance section).
 
 We strongly recommend to use [wandb](https://docs.wandb.ai/) platform to track the training/validation/testing loss functions during the execution.
+
+> #### NOTE:
+> When training starts, a `processed` folder is created inside the `data` directory; if another training is launched, the system will automatically reuse the processed data, and to force reprocessing, simply delete the `processed` folder.
 
 ### Hyperparameter Optimization
 For `HPO` we use [optuna](https://optuna.readthedocs.io/en/stable/) python library to optimize both the model's architecture and the training hyperparameters. Since, VibraCLIP is a multi-modal framework we used a multi-objective strategy optimization where both the validation loss referred to the graph representation and also the validation loss from the spectra. We recommend the user to look at the `main_optuna.py` script before launching an `HPO` experiment.
 
 ### Evaluate VibraCLIP performance
-We provide the jupyter notebooks, along with the pickle files with all the testing data, in the folder `notebooks` to analyze and visualize the performance of VibraCLIP to get the same plots that are in the publication manuscript.
+We provide two jupyter notebooks, along with the pickle files (see supplementary data section) with all the testing data, in the folder `notebooks` to analyze and visualize the performance of VibraCLIP to get the same plots that are in the publication manuscript.
 
-- `metrics.ipynb`: To plot the retrieval accuracy plot of the test set and chemical spaces based on TopK.
-- `plots.ipynb`: The actual retrieval accuracy plots from the publication for better comparison.
+- `notebooks/vibraclip_metrics.ipynb`: To plot the retrieval accuracy plot of the test set and chemical spaces based on TopK.
+- `notebooks/vibraclip_plots.ipynb`: The actual retrieval accuracy plots from the publication for better comparison.
+
+We also include a `notebooks/figures` folder with all the performance and molecular grids from the publication. The `notebooks/outputs` folder is to place the callback pickle files for analysis.
 
 ### Makefile
 Inside the `Makefile` there are a few handy commands to streamline cleaning tasks.
