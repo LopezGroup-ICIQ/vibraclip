@@ -105,6 +105,7 @@ def train_model(cfg: DictConfig) -> Trainer:
                 save_top_k=1,
             ),
             LearningRateMonitor(logging_interval="epoch"),
+            RichProgressBar(refresh_rate=1),
             RetrievalAccIRRaman(filename=f"{cfg.experiment.id}"),
         ],
         logger=logger,
