@@ -2,7 +2,7 @@ experiment:
   id: "vibraclip_experiment_id"
 
 paths:
-  root_dir: "<<YOUR_PATH>>/vibraclip"
+  root_dir: "/<<YOUR_PATH>>/vibraclip"
   db_path: "/data/qm9s_ir_raman.lmdb"
   checkpoint_path: "/checkpoints"
   pre_trained_path: "/pre_trained"
