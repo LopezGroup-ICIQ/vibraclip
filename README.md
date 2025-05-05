@@ -60,7 +60,7 @@ To train VibraCLIP, we use [hydra](https://hydra.cc/) to configure the model's h
 
 > #### NOTE:
 > Please, change the experiment id inside the `config.yaml` file with a lable that tracks your experiments as (e.g., `id: "vibraclip_graph_ir_mass_01"`).
-> Also, inside the `paths` the `root_dir` tag should be changed to the path where `vibraclip` is cloned.
+> Also, inside the `paths` the `root_dir` tag should be changed to the path where `vibraclip` is cloned (e.g., `root_dir: "/home/USER/vibraclip"`).
 
 VibraCLIP considers different scenarios for training, depending on the included modalities:
 
