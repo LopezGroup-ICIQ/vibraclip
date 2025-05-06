@@ -139,4 +139,4 @@ Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sutskeve
 Learning transferable visual models from natural language supervision. ICML, 2021, 8748-8763, [URL](http://proceedings.mlr.press/v139/radford21a)
 
 <a id="2">[2]</a>
-Zou, Z., Zhang, Y., Liang, L., Wei, M., Leng, J., Jiang, J., Hu, W., A deep learning model for predicting selected organic molecular spectra. Nature Computational Science, 2023, 3(11), 957-964, [URL](https://www.nature.com/articles/s43588-023-00550-y)
+Zou, Z., Zhang, Y., Liang, L., Wei, M., Leng, J., Jiang, J., Hu, W., A deep learning model for predicting selected organic molecular spectra. Nature Computational Science, 2023, 3(11), 957-964, [URL](https://www.nature.com/articles/s43588-023-00550-y).
